@@ -10,3 +10,4 @@ chatbot uii in development frontend backend
 docker-compose up -d --force-recreate --build
 ```
 
+open http://localhost:8080/index.html
