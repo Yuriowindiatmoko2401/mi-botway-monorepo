@@ -32,3 +32,4 @@ mariadb/ibdata1
 mariadb/ibtmp1
 
 .venv
+.env
