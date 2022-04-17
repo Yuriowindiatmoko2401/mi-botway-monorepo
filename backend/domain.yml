@@ -1,0 +1,86 @@
+intents:
+- intent_berpisah
+- intent_confirm_kota
+- intent_confirm_nama_atau_nim
+- intent_jadwal_sholat
+- intent_menolak
+- intent_menyapa
+- intent_minta_daftar_nilai
+- intent_minta_jadwal
+- intent_minta_jadwal_saja
+- intent_prediksi_cuaca
+- intent_salam
+- intent_setuju
+- menantang_bot
+- mood_baik
+- mood_tidak_senang
+- terima_kasih
+entities:
+- NIM
+- konsentrasi
+- kota
+- nama
+slots:
+  NIM:
+    type: text
+  konsentrasi:
+    type: text
+  kota:
+    type: text
+  nama:
+    type: text
+templates:
+  utter_menyapa:
+  - text: hai saya chatbot uii, mau saya bantu
+  - text: hai saya chatbot uii, ada yang bisa saya banting , eh .. bantu
+  - text: hai saya chatbot uii, ada yang bisa saya bantu
+  - text: hai saya chatbot uii, bisa saya bantu
+  utter_membalas_salam:
+  - text: walaikum salam saya chatbot uii, ada yang bisa saya bantu
+  - text: walaikum salam saya chatbot uii, bisa saya bantu
+  utter_berpisah:
+  - text: sampai berjumpa kembali
+  - text: sampai jumpa lagi
+  utter_terima_kasih:
+  - text: terima kasih kawan
+  - text: kasih diterima :)
+  - text: terima kasih kembali
+  utter_apakah_membantu:
+  - text: apakah sudah membantu kawan
+  - text: apakah sudah membantu
+  utter_senang:
+  - text: luar biasa , saya ikut senang
+  - text: wow , semangat
+  utter_menyemangati:
+  - text: semangat semangat kaka
+  utter_saya_bot:
+  - text: saya adalah bot
+  utter_tanya_konsentrasi:
+  - text: untuk konsentrasi atau prodi apa ?
+  - text: boleh tau prodinya apa?
+  - text: boleh tau konsentrasinya apa?
+  utter_tanya_nama_atau_nim:
+  - text: boleh tau nama lengkap atau NIM nya ?
+  - text: tolong dong nama lengkap atau NIM nya ?
+  - text: tuliskan nama lengkap atau NIM nya ?
+  - text: minta nama lengkap atau NIM nya dong :)
+  utter_tanya_kota:
+  - text: boleh tau kota atau kabupatennya dimana ?
+  - text: dari kota mana ya ?
+  - text: tinggalnya dimana ?
+actions:
+- action_daftar_jadwal
+- action_daftar_nilai
+- action_jadwal_sholat
+- action_pred_cuaca
+- utter_apakah_membantu
+- utter_berpisah
+- utter_membalas_salam
+- utter_menyapa
+- utter_menyemangati
+- utter_saya_bot
+- utter_senang
+- utter_tanya_konsentrasi
+- utter_tanya_kota
+- utter_tanya_nama_atau_nim
+- utter_terima_kasih
