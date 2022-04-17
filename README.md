@@ -1,4 +1,4 @@
-# mi-botway monorep
+# mi-botway monorepo
 chatbot uii in development frontend backend
 
 ## up n running
