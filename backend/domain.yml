@@ -69,6 +69,7 @@ templates:
   - text: dari kota mana ya ?
   - text: tinggalnya dimana ?
 actions:
+- action_default_fallback
 - action_daftar_jadwal
 - action_daftar_nilai
 - action_jadwal_sholat

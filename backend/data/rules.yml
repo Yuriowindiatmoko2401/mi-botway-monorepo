@@ -1,0 +1,12 @@
+version: "2.0"
+rules:
+- rule: say good bye when the user says goodbye
+  steps:
+    - intent: intent_berpisah
+    - action: utter_berpisah
+
+# simple fallback:
+- rule: Implementation of the simple-Fallback
+  steps:
+  - intent: nlu_fallback
+  - action: action_default_fallback

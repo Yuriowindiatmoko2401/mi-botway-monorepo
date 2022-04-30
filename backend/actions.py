@@ -20,6 +20,19 @@ import requests, os
 translator = Translator()
 
 
+class ActionDefaultFallback(Action):
+    def name(self) -> Text:
+            return "action_default_fallback"
+            
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+            # output a message saying that the conversation will now be
+            # continued by a human.
+    
+            message = "Mohon maaf saya kurang faham! Saya sambungkan ke bu asti saja yaa .."
+            dispatcher.utter_message(text=message)
+            return []
+
+
 class ActionDaftarJadwal(Action):
     def name(self) -> Text:
         return "action_daftar_jadwal"
@@ -41,6 +54,10 @@ class ActionDaftarJadwal(Action):
         mycursor = conn.cursor()
 
         konsentrasi = tracker.get_slot("konsentrasi")
+
+        if konsentrasi is None:
+            dispatcher.utter_message(text="mohon maaf prodi blm terdaftar di system kami..")
+            return []
 
         konsentrasi = konsentrasi.upper()
 
@@ -112,6 +129,10 @@ class ActionDaftarNilai(Action):
         except:
             nama = None
 
+        if nim is None and nama is None:
+            dispatcher.utter_message(text="mohon maaf nim atau nama blm terdaftar di system kami..")
+            return []
+
         nama = nama.upper()
 
         message = "daftar nilai" + """\n"""
@@ -169,6 +190,10 @@ class ActionJadwalSholat(Action):
 
         kawasan = tracker.get_slot("kota")
 
+        if kawasan is None:
+            dispatcher.utter_message(text="mohon maaf kota atau kawasan blm terdaftar di system kami..")
+            return []
+
         kawasan = kawasan.lower()
 
         mycursor.execute(
@@ -224,6 +249,10 @@ class ActionPredCuaca(Action):
 
         kawasan = tracker.get_slot("kota")
 
+        if kawasan is None:
+            dispatcher.utter_message(text="mohon maaf kota atau kawasan blm terdaftar di system kami..")
+            return []
+            
         kawasan = kawasan.lower()
 
         mycursor.execute(
